@@ -16,9 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
-from posts.api.views import PostApiView
+from posts.api.route import router_post
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/posts/', PostApiView.as_view())
+    path('api/', include(router_post.urls))
 ]
