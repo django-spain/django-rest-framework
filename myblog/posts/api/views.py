@@ -11,13 +11,13 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthentic
 
 class PostModeViewSet(ModelViewSet):
     # Si quiero que sea solo para usuarios autentificados.
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     
     # Si esta autenticado puede leer
     # permission_classes = [IsAuthenticatedOrReadOnly]
     
     # Com esto solo el usuario admin puede 
-    # permission_classes = [IsAdminUser]
+    permission_classes = [IsAdminUser]
     
     serializer_class = PostSerializer
     queryset = Post.objects.all()
